@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package property;
+
+service HeroesService {
+  rpc FindOne (property_type) returns (ht_property_type) {}
+}
+
+message property_type {
+  string createdAt = 1;
+  string deletedAt = 2;
+  string updatedAt = 3;
+}
+
+message ht_property_type {
+  int32 id = 1;
+  string type = 2;
+  string createdAt = 3;
+  string deletedAt = 4;
+  string updatedAt = 5;
+
+}
