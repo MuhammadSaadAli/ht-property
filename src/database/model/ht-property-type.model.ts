@@ -1,10 +1,4 @@
-import {
-  Column,
-  DataType,
-  Model,
-  Sequelize,
-  Table,
-} from 'sequelize-typescript';
+import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
 export interface IHtPropertyType {
   id: string;

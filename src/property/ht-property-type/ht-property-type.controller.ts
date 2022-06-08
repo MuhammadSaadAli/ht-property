@@ -23,7 +23,7 @@ export class HtPropertyTypeController {
   @Get()
   async findAll(@Query() filters: any = {}) {
     console.log(filters);
-    return this.propertyTypeService.findAll(filters);
+    return this.propertyTypeService.find(filters);
   }
 
   @Patch('/:id')

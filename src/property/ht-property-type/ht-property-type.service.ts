@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import {
   HtPropertyType,
   IHtPropertyType,
@@ -11,10 +11,14 @@ export class HtPropertyTypeService {
   ) {}
 
   async create(propertyType: IHtPropertyType) {
+    console.log('propertyType : ', propertyType.type);
+    if (propertyType.type === undefined) {
+      throw new BadRequestException('Please Enter the type');
+    }
     return await this.userRepository.create(propertyType);
   }
 
-  async findAll(filters: any) {
+  async find(filters: any) {
     let where: any = {};
 
     if (filters.type) {
