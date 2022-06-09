@@ -10,7 +10,15 @@ export class HtRentDetailsService {
     @Inject('HT_Rent_Details') private userRepository: typeof HtRentDetails,
   ) {}
   async create(rentDetails: IHtRentDetails) {
+    console.log(rentDetails);
     return await this.userRepository.create(rentDetails);
+  }
+
+  async find(filters: IHtRentDetails) {
+    // console.log('filter', filters)
+    let where: any = filters;
+
+    return await this.userRepository.findAll({ where });
   }
 
   async updateType(id: string, rentDetails: IHtRentDetails) {

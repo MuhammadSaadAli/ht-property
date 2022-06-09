@@ -1,13 +1,19 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import {
+  Column,
+  DataType,
+  Model,
+  Table,
+  ForeignKey,
+} from 'sequelize-typescript';
 
 export interface IHtRentDetails {
-  id: string;
-  propertyId: string;
-  amount: number;
-  ats: number;
-  createdAt: Date;
-  updatedAt: Date;
-  deletedAt: Date;
+  id?: string;
+  propertyId?: string;
+  amount?: number;
+  ats?: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deletedAt?: Date;
 }
 @Table({ tableName: 'ht_rent_detail', timestamps: false, underscored: false })
 export class HtRentDetails extends Model<IHtRentDetails> {
@@ -18,6 +24,7 @@ export class HtRentDetails extends Model<IHtRentDetails> {
   })
   id: string;
 
+  // ForeignKey(() => HtPr)
   @Column({ allowNull: false, type: DataType.STRING })
   propertyId: string;
 

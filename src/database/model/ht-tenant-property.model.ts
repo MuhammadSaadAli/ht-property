@@ -25,10 +25,10 @@ export class HtTenantProperty extends Model<IHtTenantProperty> {
   })
   id: string;
 
-  @Column({ allowNull: true, type: DataType.STRING })
+  @Column({ allowNull: false, type: DataType.STRING })
   tenantId: string;
 
-  @Column({ allowNull: true, type: DataType.STRING })
+  @Column({ allowNull: false, type: DataType.STRING })
   propertyId: string;
 
   @Column({ allowNull: true, type: DataType.DATE, defaultValue: null })
