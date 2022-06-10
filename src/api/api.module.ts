@@ -7,7 +7,12 @@ import { HtTenantPropertyModule } from './ht-tenant-property/ht-tenant-property.
 @Module({
   controllers: [],
   providers: [],
-  imports: [HtPropertyTypeModule, HtPropertyModule, HtRentDetailsModule, HtTenantPropertyModule],
+  imports: [
+    HtPropertyTypeModule,
+    HtPropertyModule,
+    HtRentDetailsModule,
+    HtTenantPropertyModule,
+  ],
   exports: [HtPropertyTypeModule],
 })
-export class PropertyModule {}
+export class ApiModule {}

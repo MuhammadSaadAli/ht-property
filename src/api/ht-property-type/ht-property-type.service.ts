@@ -1,4 +1,5 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
+import { HT_PROPERTY_TYPES } from 'src/database/constants/constants';
 import {
   HtPropertyType,
   IHtPropertyType,
@@ -7,7 +8,7 @@ import {
 @Injectable()
 export class HtPropertyTypeService {
   constructor(
-    @Inject('HT_PROPERTY_TYPES') private userRepository: typeof HtPropertyType,
+    @Inject(HT_PROPERTY_TYPES) private userRepository: typeof HtPropertyType,
   ) {}
 
   async create(propertyType: IHtPropertyType) {

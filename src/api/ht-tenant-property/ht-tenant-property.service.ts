@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { HT_TENANT_PROPERTY } from 'src/database/constants/constants';
 import {
   HtTenantProperty,
   IHtTenantProperty,
@@ -7,7 +8,7 @@ import {
 @Injectable()
 export class HtTenantPropertyService {
   constructor(
-    @Inject('HT_Tenant_Property')
+    @Inject(HT_TENANT_PROPERTY)
     private userRepository: typeof HtTenantProperty,
   ) {}
   async create(tenantProperty: IHtTenantProperty) {
@@ -24,6 +25,8 @@ export class HtTenantPropertyService {
 
   async updateType(id: string, tenantProperty: IHtTenantProperty) {
     tenantProperty.updatedAt = new Date();
+    console.log(tenantProperty);
+    tenantProperty.moveIn = new Date(tenantProperty.moveIn);
     return await this.userRepository.update(tenantProperty, { where: { id } });
   }
 

@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { HT_RENT_DETAILS } from 'src/database/constants/constants';
 import {
   HtRentDetails,
   IHtRentDetails,
@@ -7,7 +8,7 @@ import {
 @Injectable()
 export class HtRentDetailsService {
   constructor(
-    @Inject('HT_Rent_Details') private userRepository: typeof HtRentDetails,
+    @Inject(HT_RENT_DETAILS) private userRepository: typeof HtRentDetails,
   ) {}
   async create(rentDetails: IHtRentDetails) {
     console.log(rentDetails);

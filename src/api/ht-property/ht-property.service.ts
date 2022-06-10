@@ -1,11 +1,10 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { HT_PROPERTY } from 'src/database/constants/constants';
 import { HtProperty, IHtProperty } from 'src/database/model/ht-property.model';
 
 @Injectable()
 export class HtPropertyService {
-  constructor(
-    @Inject('HT_PROPERTY') private userRepository: typeof HtProperty,
-  ) {}
+  constructor(@Inject(HT_PROPERTY) private userRepository: typeof HtProperty) {}
 
   async createProperty(property: IHtProperty) {
     console.log(property);
