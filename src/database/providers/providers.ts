@@ -1,4 +1,7 @@
-import { HT_TENANT_PROPERTY } from '../constants/constants';
+import {
+  HT_PROPERTY_ACTIVITY_LOG,
+  HT_TENANT_PROPERTY,
+} from '../constants/constants';
 import { HtTenantProperty } from '../model/ht-tenant-property.model';
 import { HT_RENT_DETAILS } from '../constants/constants';
 import { HtRentDetails } from '../model/ht-rent-details.model';
@@ -6,6 +9,7 @@ import { HT_PROPERTY } from '../constants/constants';
 import { HtProperty } from '../model/ht-property.model';
 import { HT_PROPERTY_TYPES } from '../constants/constants';
 import { HtPropertyType } from '../model/ht-property-type.model';
+import { HtPropertyActivityLog } from '../model/ht-property-activity-log.model';
 
 export const HtPropertyTypeProviders = [
   {
@@ -32,5 +36,12 @@ export const HtTenantPropertyProviders = [
   {
     provide: HT_TENANT_PROPERTY,
     useValue: HtTenantProperty,
+  },
+];
+
+export const HtPropertyActivityLogProvider = [
+  {
+    provide: HT_PROPERTY_ACTIVITY_LOG,
+    useValue: HtPropertyActivityLog,
   },
 ];

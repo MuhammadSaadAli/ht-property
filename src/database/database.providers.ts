@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
+import { HtPropertyActivityLog } from './model/ht-property-activity-log.model';
 import { HtPropertyType } from './model/ht-property-type.model';
 import { HtProperty } from './model/ht-property.model';
 import { HtRentDetails } from './model/ht-rent-details.model';
@@ -21,6 +22,7 @@ export const databaseProviders = [
         HtProperty,
         HtRentDetails,
         HtTenantProperty,
+        HtPropertyActivityLog,
       ]);
       await sequelize.sync();
       return sequelize;
