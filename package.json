@@ -1,5 +1,5 @@
 {
-  "name": "ht-property",
+  "name": "ht-propertymanagement-api",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -21,22 +21,20 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.6.7",
-    "@grpc/proto-loader": "^0.6.12",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
-    "@nestjs/microservices": "^8.4.6",
+    "@nestjs/microservices": "^8.4.7",
     "@nestjs/platform-express": "^8.0.0",
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.13.2",
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "sequelize": "^6.20.1",
+    "sequelize": "^6.21.0",
     "sequelize-typescript": "^2.1.3"
   },
   "devDependencies": {
+    "@grpc/grpc-js": "^1.6.7",
+    "@grpc/proto-loader": "^0.6.13",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "WizTech123a#@!",
+    "database": "ht_propertymanagement",
+    "host": "10.200.200.24",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "WizTech123a#@!",
+    "database": "ht_propertymanagement",
+    "host": "10.200.200.24",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "WizTech123a#@!",
+    "database": "ht_propertymanagement",
+    "host": "10.200.200.24",
+    "dialect": "mysql"
+  }
+}

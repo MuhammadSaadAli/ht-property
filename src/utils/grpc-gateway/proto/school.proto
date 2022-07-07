@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package school;
+
+service SchoolMicroservice {
+    rpc GetAllSchools (Empty) returns (MAllSchools);
+    rpc GetSchool (MIdParam) returns (MSchool);
+    rpc SoftDeleteSchool (MIdParam) returns (Empty);
+}
+
+message Empty {} 
+
+message MSchool {
+  string id = 1;
+  string  stateId = 2;
+  string  cityId = 3;
+  string  countyId = 4;
+  string  name = 5;
+  string  address = 6;
+  string  address2 = 7;
+  string  address3 = 8;
+  int32  zipCode = 9;
+  string  type = 10;
+  string  createdAt = 11;
+  string  updatedAt = 12;
+  string  deletedAt = 13;
+  MCity  city = 14;
+  MCounty  county = 15;
+  MState  state = 16;
+}
+
+message MAllSchools {
+ repeated MSchool schools = 1;
+}
+
+
+message MIdParam {
+    string id = 1;
+}
+
+message MCity {
+  string id = 1;
+  string name = 2;
+  string createdAt = 3;
+  string updatedAt = 4;
+  string deletedAt = 5;
+}
+
+message MCounty {
+  string id = 1;
+  string name = 2;
+  int32 number = 3;
+  string createdAt = 4;
+  string updatedAt = 5;
+  string deletedAt = 6;
+}
+
+message MState {
+  string id = 1;
+  string name = 2;
+  string stateCode = 3;
+  string createdAt = 4;
+  string updatedAt = 5;
+  string deletedAt = 6;
+}

@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package property_management;
+
+service PropertyManagementGrpcService {
+  rpc GetAllProperties (MProperty) returns (MPropertyArray) {};
+  rpc GetPropertyById (PropertyByIdParam) returns (MProperty) {};
+  rpc AddProperty (MProperty) returns (MProperty) {};
+  rpc AddProperties (MPropertyArray) returns (MPropertyArray) {};
+}
+
+message Empty {}
+
+message PropertyByIdParam {
+    string id = 1;
+}
+
+message MPropertyArray {
+    repeated MProperty properties = 1;
+}
+
+message MProperty {
+ string id = 1;
+ string schoolId = 2;
+ string userId = 3;
+ string propertyTypeId = 4;
+ string ownerId = 5;
+ string name = 6;
+ string apartment = 7;
+ string address = 8;
+ string streetAddress = 9;
+ string phone = 10;
+ int32 rent = 11;
+ string isPrimary = 12;
+ string leaseExpiryDate = 13;
+ int32 canTenantInitiate = 14;
+ string status = 15;
+ string createdAt = 16;
+ string updatedAt = 17;
+ string deletedAt = 18;
+ MPropertyType propertyType = 19;
+ repeated MTenantProperty tenants = 20;
+ repeated MRentDetails rentDetails = 21;
+}
+
+message MRentDetails {
+ string id =  1;
+  string propertyId = 2;
+  int32 amount = 3;
+  int32 ats = 4;
+  string createdAt = 5;
+  string updatedAt = 6;
+  string deletedAt = 7;
+  MProperty property = 9;
+}
+
+message MPropertyType {
+  string id = 1;
+  string type = 2;
+  string createdAt = 3;
+  string updatedAt = 4;
+  string deletedAt = 5;
+}
+
+message MTenantProperty {
+   string id = 1;
+   string tenantId = 2;
+   string propertyId = 3;
+   string moveIn = 4;
+   string moveOut = 5;
+   string status = 6;
+   string createdAt = 7;
+   string updatedAt = 8;
+   string deletedAt = 9;
+   MProperty property = 10;
+}
